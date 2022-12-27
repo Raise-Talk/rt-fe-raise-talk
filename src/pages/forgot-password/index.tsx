@@ -1,5 +1,5 @@
 // ** React Imports
-import { ReactNode, SyntheticEvent, useState } from 'react'
+import { ReactNode, useState } from 'react'
 
 // ** Next Import
 import Link from 'next/link'
@@ -24,7 +24,6 @@ import BlankLayout from 'src/@core/layouts/BlankLayout'
 
 // ** Demo Imports
 import FooterIllustrationsV1 from 'src/views/pages/auth/FooterIllustrationsV1'
-import { useRouter } from 'next/router'
 import { useAuth } from 'src/hooks/useAuth'
 import { Controller, useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
@@ -55,12 +54,12 @@ const defaultValues = {
 const ForgotPassword = () => {
   // ** Hook
   const theme = useTheme()
-  const router = useRouter()
+
   const [showError, setShowError] = useState<string>('')
 
   const {
     control,
-    setError,
+
     handleSubmit,
     formState: { errors }
   } = useForm({

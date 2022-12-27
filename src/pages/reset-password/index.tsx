@@ -1,5 +1,5 @@
 // ** React Imports
-import { useState, SyntheticEvent, ChangeEvent, MouseEvent, ReactNode } from 'react'
+import { useState, ReactNode } from 'react'
 
 // ** Next Import
 import Link from 'next/link'
@@ -72,7 +72,7 @@ const ResetPassword = () => {
 
   const {
     control,
-    setError,
+
     handleSubmit,
     formState: { errors }
   } = useForm({

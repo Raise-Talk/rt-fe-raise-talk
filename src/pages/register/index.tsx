@@ -1,5 +1,5 @@
 // ** React Imports
-import { useState, Fragment, ChangeEvent, MouseEvent, ReactNode } from 'react'
+import { useState, MouseEvent, ReactNode } from 'react'
 
 // ** Next Import
 import Link from 'next/link'
@@ -17,9 +17,10 @@ import OutlinedInput from '@mui/material/OutlinedInput'
 import { styled, useTheme } from '@mui/material/styles'
 import MuiCard, { CardProps } from '@mui/material/Card'
 import InputAdornment from '@mui/material/InputAdornment'
-import MuiFormControlLabel, { FormControlLabelProps } from '@mui/material/FormControlLabel'
+
 import * as yup from 'yup'
 import { pt } from 'yup-locale-pt'
+
 // ** Icon Imports
 import Icon from 'src/@core/components/icon'
 
@@ -36,11 +37,6 @@ import { Alert, FormHelperText } from '@mui/material'
 import { Controller, useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useAuth } from 'src/hooks/useAuth'
-
-interface State {
-  password: string
-  showPassword: boolean
-}
 
 interface FormData {
   email: string
@@ -67,20 +63,7 @@ const Card = styled(MuiCard)<CardProps>(({ theme }) => ({
   [theme.breakpoints.up('sm')]: { width: '28rem' }
 }))
 
-const FormControlLabel = styled(MuiFormControlLabel)<FormControlLabelProps>(({ theme }) => ({
-  marginBottom: theme.spacing(4),
-  '& .MuiFormControlLabel-label': {
-    fontSize: '0.875rem',
-    color: theme.palette.text.secondary
-  }
-}))
-
 const Register = () => {
-  const [values, setValues] = useState<State>({
-    password: '',
-    showPassword: false
-  })
-
   const [showPassword, setShowPassword] = useState<boolean>(false)
   const [showError, setShowError] = useState<string>('')
 
@@ -88,7 +71,7 @@ const Register = () => {
 
   const {
     control,
-    setError,
+
     handleSubmit,
     formState: { errors }
   } = useForm({

@@ -26,6 +26,7 @@ const UserThemeOptions = (): ThemeOptions => {
         contrastText: '#FFF'
       }
     }
+
     /*
     palette:{
       primary: {

@@ -132,7 +132,7 @@ const AuthProvider = ({ children }: Props) => {
   }
 
   const handleConfirmAccount = ({ code }: ConfirmAccountParams, errorCallback?: ErrCallbackType) => {
-    let dataLogin = window.localStorage.getItem('register')!
+    const dataLogin = window.localStorage.getItem('register')!
     const { email, password } = JSON.parse(dataLogin)
 
     axios
@@ -152,7 +152,7 @@ const AuthProvider = ({ children }: Props) => {
   const handleForgotPassword = ({ email }: ForgotPasswordParams, errorCallback?: ErrCallbackType) => {
     axios
       .post(authConfig.forgotPassword, { email })
-      .then(res => {
+      .then(() => {
         router.push('/reset-password')
       })
       .catch(err => {
@@ -168,7 +168,7 @@ const AuthProvider = ({ children }: Props) => {
   ) => {
     axios
       .post(authConfig.confirmPassword, { email, newPassword, code })
-      .then(res => {
+      .then(() => {
         handleLogin({ email, password: newPassword })
       })
       .catch(err => {

@@ -1,5 +1,5 @@
 // ** React Imports
-import { useState, ReactNode, MouseEvent } from 'react'
+import { useState, ReactNode } from 'react'
 
 // ** Next Imports
 import Link from 'next/link'
@@ -13,7 +13,7 @@ import IconButton from '@mui/material/IconButton'
 import Box from '@mui/material/Box'
 import FormControl from '@mui/material/FormControl'
 import OutlinedInput from '@mui/material/OutlinedInput'
-import { styled, useTheme } from '@mui/material/styles'
+import { styled } from '@mui/material/styles'
 import InputAdornment from '@mui/material/InputAdornment'
 import Typography from '@mui/material/Typography'
 
@@ -40,7 +40,7 @@ import MuiCard, { CardProps } from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import FooterIllustrationsV1 from 'src/views/pages/auth/FooterIllustrationsV1'
 import { Alert, FormHelperText } from '@mui/material'
-import { AxiosError, AxiosResponse } from 'axios'
+
 import Translations from 'src/layouts/components/Translations'
 
 // ** Styled Components
@@ -72,7 +72,7 @@ const LoginPage = () => {
 
   const {
     control,
-    setError,
+
     handleSubmit,
     formState: { errors }
   } = useForm({
