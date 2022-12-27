@@ -228,7 +228,7 @@ const ResetPassword = () => {
             )}
             <FormControl fullWidth sx={{ mb: 2 }}>
               <InputLabel htmlFor='auth-login-password' error={Boolean(errors.newPassword)}>
-                Senha
+                Nova senha
               </InputLabel>
               <Controller
                 name='newPassword'
