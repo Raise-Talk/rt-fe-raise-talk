@@ -86,7 +86,13 @@ const AuthProvider = ({ children }: Props) => {
   const handleLogin = (params: LoginParams, errorCallback?: ErrCallbackType) => {
     window.localStorage.removeItem('register')
     axios
-      .post(authConfig.loginEndpoint, params)
+      .post(authConfig.loginEndpoint, params, {
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Credentials': true,
+          'Access-Control-Allow-Headers': '*'
+        }
+      })
       .then(async response => {
         window.localStorage.setItem(authConfig.storageTokenKeyName, response.data.response.AccessToken)
 
@@ -136,7 +142,15 @@ const AuthProvider = ({ children }: Props) => {
     const { email, password } = JSON.parse(dataLogin)
 
     axios
-      .post(authConfig.confirmAccount, { code, email })
+      .post(
+        authConfig.confirmAccount,
+        { code, email },
+        {
+          headers: {
+            'Access-Control-Allow-Origin': '*'
+          }
+        }
+      )
       .then(res => {
         console.log(res)
 
