@@ -6,7 +6,10 @@ const navigation = (): HorizontalNavItemsType => {
     {
       icon: 'mdi:poll',
       title: 'Dashboard',
-      path: '/dashboard'
+      path: '/dashboard',
+      badgeContent: 'Em breve',
+      badgeColor: 'error',
+      disabled: true
     },
     {
       icon: 'mdi:contacts',
@@ -16,12 +19,18 @@ const navigation = (): HorizontalNavItemsType => {
     {
       icon: 'mdi:bell',
       title: 'Lembretes',
-      path: '/reminders'
+      path: '/reminders',
+      badgeContent: 'Em breve',
+      badgeColor: 'error',
+      disabled: true
     },
     {
       icon: 'mdi:currency-usd',
       title: 'Financeiro',
-      path: '/financial'
+      path: '/financial',
+      badgeContent: 'Em breve',
+      badgeColor: 'error',
+      disabled: true
     },
     {
       title: 'Imóveis',

@@ -136,5 +136,6 @@ const ReactHotToasts = () => {
     </Grid>
   )
 }
+ReactHotToasts.guestGuard = true
 
 export default ReactHotToasts
