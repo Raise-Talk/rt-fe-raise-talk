@@ -16,6 +16,18 @@ export type UsersType = {
   avatarColor?: ThemeColor
 }
 
+export type ContactsType = {
+  id: number
+  name: string
+  phone: string
+  email: string
+  status: string
+  note: string
+  origin: string
+  createdAt: string
+  updatedAt: string
+}
+
 export type ProjectListDataType = {
   id: number
   img: string

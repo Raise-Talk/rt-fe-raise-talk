@@ -22,16 +22,17 @@ const TableHeader = (props: TableHeaderProps) => {
         sx={{ mr: 4, mb: 2 }}
         color='secondary'
         variant='outlined'
-        startIcon={<Icon icon='mdi:export-variant' fontSize={20} />}
+        startIcon={<Icon icon='mdi:import' fontSize={20} />}
+        disabled
       >
-        Export
+        Importar
       </Button>
       <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
         <TextField
           size='small'
           value={value}
           sx={{ mr: 6, mb: 2 }}
-          placeholder='Search User'
+          placeholder='Pesquisar contato'
           onChange={e => handleFilter(e.target.value)}
         />
 

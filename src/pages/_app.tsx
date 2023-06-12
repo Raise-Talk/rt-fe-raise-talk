@@ -63,6 +63,7 @@ import 'src/iconify-bundle/icons-bundle-react'
 
 // ** Global css styles
 import '../../styles/globals.css'
+import { ContactProvider } from './contacts/Context'
 
 // ** Extend App Props with Emotion
 type ExtendedAppProps = AppProps & {
@@ -137,7 +138,7 @@ const App = (props: ExtendedAppProps) => {
                     <WindowWrapper>
                       <Guard authGuard={authGuard} guestGuard={guestGuard}>
                         <AclGuard aclAbilities={aclAbilities} guestGuard={guestGuard}>
-                          {getLayout(<Component {...pageProps} />)}
+                          <ContactProvider>{getLayout(<Component {...pageProps} />)}</ContactProvider>
                         </AclGuard>
                       </Guard>
                     </WindowWrapper>

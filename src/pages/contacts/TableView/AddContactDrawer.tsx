@@ -27,6 +27,7 @@ import { addContact } from 'src/store/apps/contacts'
 import toast from 'react-hot-toast'
 import { useTheme } from '@mui/material/styles'
 import { AxiosError } from 'axios'
+import { useContactContext } from '../Context'
 
 interface AddContactDrawerType {
   open: boolean
@@ -62,6 +63,9 @@ const defaultValues = {
 }
 
 const AddContactDrawer = (props: AddContactDrawerType) => {
+  //** Contexts
+  const { contacts, setContacts } = useContactContext()
+
   // ** Props
   const { open, toggle } = props
 
@@ -86,10 +90,12 @@ const AddContactDrawer = (props: AddContactDrawerType) => {
 
   const onSubmit = async (data: ContactData) => {
     try {
-      await addContact({ ...data, status })
+      const newContact = await addContact({ ...data, status })
 
+      setContacts([...contacts, newContact])
       toggle()
       reset()
+
       toast.success('Contato adicionado com sucesso!', {
         position: 'bottom-left',
         duration: 5000,

@@ -22,8 +22,8 @@ interface DataParams {
 // }
 
 // ** Fetch Users
-export const fetchData = createAsyncThunk('appUsers/fetchData', async (params: DataParams) => {
-  const response = await axios.get('/apps/users/list', {
+export const fetchData = createAsyncThunk('appContacts/fetchData', async (params?: DataParams) => {
+  const response = await axios.get(`${process.env.NEXT_PUBLIC_API_HOST}/contacts`, {
     params
   })
 
